@@ -3,7 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
-
+@* Lista kategorii*@
 
 <div class="container p-3">  
     <div class="row pt-4">
@@ -33,6 +33,7 @@
         </tr>
     </thead>
     <tbody>
+        @*Wyświetlanie odpowiednich wartości*@
         @foreach(var obj in Model)
         {
             <tr>

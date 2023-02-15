@@ -1,13 +1,9 @@
 ﻿
 #nullable disable
 
-using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 using Wanessav4.Models;
 
 namespace Wanessav4.Areas.Identity.Pages.Account
@@ -33,7 +29,6 @@ namespace Wanessav4.Areas.Identity.Pages.Account
             }
             else
             {
-                
                 return RedirectToPage();
             }
         }

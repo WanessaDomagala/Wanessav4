@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Wanessav4.Controllers
 {
+    // Kontroler strony kategorii, do którego mają dostęp tylko zalogowani użytkownicy
     [Authorize]
     public class CategoryController : Controller
     {
@@ -21,12 +22,12 @@ namespace Wanessav4.Controllers
             IEnumerable<Category> objCategoryList = _db.Categories;
             return View(objCategoryList);
         }
-        //GET
+        // GET
         public IActionResult Create()
         {
             return View();
         }
-        //POST
+        // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
@@ -45,7 +46,7 @@ namespace Wanessav4.Controllers
             return View(obj);
         }
 
-        //GET
+        // GET
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -62,7 +63,7 @@ namespace Wanessav4.Controllers
 
             return View(categoryFromDb);
         }
-        //POST
+        // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Category obj)
@@ -80,7 +81,7 @@ namespace Wanessav4.Controllers
             }
             return View(obj);
         }
-        //GET
+        // GET
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)
@@ -98,7 +99,7 @@ namespace Wanessav4.Controllers
             return View(categoryFromDb);
         }
 
-        //POST
+        // POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeletePOST(int? id)
